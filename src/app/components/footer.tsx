@@ -10,16 +10,16 @@ const Footer = () => {
             <ul className='space-y-7 font-medium'>
                 <h3 className='font-medium text-[16px] text-mytextcolor'>Links</h3>
                 <li>
-                    <Link href={'#'}>Home</Link>
+                    <Link href={'/'}>Home</Link>
                 </li>
                 <li>
-                    <Link href={'#'}>Shop</Link>
+                    <Link href={'/shop'}>Shop</Link>
                 </li>
                 <li>
                     <Link href={'#'}>About</Link>
                 </li>
                 <li>
-                    <Link href={'#'}>Contact</Link>
+                    <Link href={'/contact'}>Contact</Link>
                 </li>
             </ul>
             <ul className='space-y-7'>
