@@ -59,7 +59,7 @@ const Navbar = () => {
             <li><Link href={'/account'}><FaRegUser className='w-[28px] h-[28px] hover:text-[#3867d6]' /></Link></li>
             <li><LuSearch className='w-[28px] h-[28px] hover:text-mytextcolor' /></li>
             <li><GoHeart className='w-[28px] h-[28px] hover:text-[#ff3f34]' /></li>
-            <li><Link href={'/cart'}></Link><BsCart3 className='w-[28px] h-[28px] hover:text-[#2ed573]' /></li>
+            <li><Link href={'/cart'}><BsCart3 className='w-[28px] h-[28px] hover:text-[#2ed573]' /></Link></li>
           </ul>
         </div>
       )}
