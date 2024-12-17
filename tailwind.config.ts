@@ -15,6 +15,7 @@ const config: Config = {
         mylightorange:'#FFF9E5',
         mylightblack:'#D9D9D9',
         mylightpink:'#FAF4F4',
+        myorange:'#FF5733'
       },
       backgroundImage: {
         'hero-pattern': "url('/assets/instagram.png')",

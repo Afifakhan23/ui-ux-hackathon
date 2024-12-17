@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillDelete } from "react-icons/ai";
 import { useState } from "react";
+import Navbar from '../components/navbar';
 
 
 const Page = () => {
@@ -15,6 +16,7 @@ const Page = () => {
       };
   return (
     <>
+    <Navbar/>
         <div className="bg-contact bg-center bg-cover bg-no-repeat min-h-[350px] sm:min-h-[316px] w-full flex flex-col justify-center items-center">
                 <Image src={'/assets/logo.png'} alt='logo' width={77} height={77} />
                 <h2 className="text-[32px] sm:text-[40px] md:text-[60px] font-bold text-center">

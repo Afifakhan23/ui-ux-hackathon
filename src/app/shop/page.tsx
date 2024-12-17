@@ -1,19 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { PiCirclesFourFill } from "react-icons/pi";
 import { BsViewList } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
+import Navbar from '../components/navbar';
 
 const Page = () => {
   return (
     <div>
+      <Navbar/>
       <div className="bg-contact bg-center bg-cover bg-no-repeat min-h-[350px] sm:min-h-[316px] w-full flex flex-col justify-center items-center">
         <Image src={'/assets/logo.png'} alt='logo' width={77} height={77} />
         <h2 className="text-[32px] sm:text-[40px] md:text-[60px] font-bold text-center">
           Shop
         </h2>
         <p className="my-4 text-[16px] sm:text-[18px] md:text-[20px] font-normal text-center">
-          <span className='font-bold'>Home</span> <span className='font-bold w-[14px] h-[8px]'>{'>'}</span> Shop
+        <Link href='/' className='font-bold'>Home</Link> <span className='font-bold w-[14px] h-[8px]'>{'>'}</span> Shop
         </p>
       </div>
       <div className='h-[100px] bg-mylightpink my-[47px] flex flex-col md:flex-row justify-evenly items-center'>
@@ -357,28 +360,29 @@ const Page = () => {
             <li className='w-[30px] h-[30px] md:w-[60px] md:h-[60px] rounded-[10px] bg-mylightorange flex justify-center items-center'>3</li>
             <li className='w-[50px] md:w-[98px] h-[40px] md:h-[60px] flex justify-center items-center  rounded-[10px] bg-mylightorange'>Next</li>
           </ul>
-          <div className="flex justify-evenly items-center bg-mylightpink w-full h-[300px] text-center mt-5">
-            <div className='w-[90px] md:w-[376px] h-[108px] '>
-              <h3 className="text-lg font-medium">Free Delivery</h3>
-              <p className="text-sm text-gray-600">
-                For all orders over $50, consectetur adipiscing elit.
-              </p>
-            </div>
-            <div className='w-[90px] md:w-[376px] h-[108px] '>
-              <h3 className="text-lg font-medium">90 Days Return</h3>
-              <p className="text-sm text-gray-600">
-                If goods have problems, consectetur adipiscing elit.
-              </p>
-            </div>
-            <div className='w-[90px] md:w-[376px] h-[108px] '>
-              <h3 className="text-lg font-medium">Secure Payment</h3>
-              <p className="text-sm text-gray-600">
-                100% secure payment, consectetur adipiscing elit.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
+      <div className="flex justify-evenly items-center bg-mylightpink w-full h-[300px] text-center mt-5">
+                    <div className='w-[90px] md:w-[376px] h-[108px] '>
+                        <h3 className="text-lg font-medium">Free Delivery</h3>
+                        <p className="text-sm text-gray-600">
+                            For all orders over $50, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                    <div className='w-[90px] md:w-[376px] h-[108px] '>
+                        <h3 className="text-lg font-medium">90 Days Return</h3>
+                        <p className="text-sm text-gray-600">
+                            If goods have problems, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                    <div className='w-[90px] md:w-[376px] h-[108px] '>
+                        <h3 className="text-lg font-medium">Secure Payment</h3>
+                        <p className="text-sm text-gray-600">
+                            100% secure payment, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                </div>
     </div>
   )
 }

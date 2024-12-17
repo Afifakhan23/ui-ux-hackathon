@@ -32,8 +32,8 @@ const Blogs = () => {
                                 Going all in with millennial design
                             </p>
                             <Link 
-                                href='#' 
-                                className='mt-4 text-center text-base lg:text-lg border-b-2 border-black hover:border-mytextcolor hover:text-mytextcolor'
+                                href='/blog' 
+                                className='mt-4 text-center text-base lg:text-lg border-b-2 border-black hover:border-myorange hover:text-myorange'
                             >
                                 Read More
                             </Link>
@@ -50,8 +50,8 @@ const Blogs = () => {
 
             {/* View All Post */}
             <Link 
-                href='#' 
-                className='mt-10 text-base lg:text-lg border-b-2 border-black hover:border-mytextcolor hover:text-mytextcolor'
+                href='/blog' 
+                className='mt-10 text-base lg:text-lg border-b-2 border-black hover:border-myorange hover:text-myorange'
             >
                 View All Posts
             </Link>
