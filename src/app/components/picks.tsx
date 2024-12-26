@@ -11,31 +11,87 @@ const Picks = () => {
           Find a bright ideal to suit your taste with our great selection of suspension, floor, and table lights.
         </p>
       </div>
-      <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        <li className="flex flex-col items-center hover:bg-mylightblack">
-          <Image src={'/assets/picks1.png'} width={287} height={287} alt="picks1" className="w-[80%] lg:w-auto" />
-          <p className="text-[14px] lg:text-[16px] font-light mt-2">Trenton modular sofa_3</p>
-          <p className="text-[18px] lg:text-[24px] font-normal">Rs. 25,000.00</p>
-        </li>
-        <li className="flex flex-col items-center hover:bg-mylightblack">
-          <Image src={'/assets/picks2.png'} width={287} height={287} alt="picks2" className="w-[80%] lg:w-auto" />
-          <p className="text-[14px] lg:text-[16px] font-light mt-2">Trenton modular sofa_3</p>
-          <p className="text-[18px] lg:text-[24px] font-normal">Rs. 25,000.00</p>
-        </li>
-        <li className="flex flex-col items-center hover:bg-mylightblack">
-          <Image src={'/assets/picks3.png'} width={287} height={287} alt="picks3" className="w-[80%] lg:w-auto" />
-          <p className="text-[14px] lg:text-[16px] font-light mt-2">Trenton modular sofa_3</p>
-          <p className="text-[18px] lg:text-[24px] font-normal">Rs. 25,000.00</p>
-        </li>
-        <li className="flex flex-col items-center hover:bg-mylightblack">
-          <Image src={'/assets/picks4.png'} width={287} height={287} alt="picks4" className="w-[80%] lg:w-auto" />
-          <p className="text-[14px] lg:text-[16px] font-light mt-2">Trenton modular sofa_3</p>
-          <p className="text-[18px] lg:text-[24px] font-normal">Rs. 25,000.00</p>
-        </li>
-      </ul>
+      <ul className="w-[320px] md:w-[1240px] h-[1200px] md:h-[397px] flex flex-col md:flex-row justify-center items-center">
+                  <li className="w-[287px] h-[300px] md:h-[350px] flex flex-col justify-between items-center hover:bg-mylightblack">
+                    <div className='w-[287px] h-[200px] md:h-[287px] flex justify-center items-center '>
+                      <Image
+                        src="/assets/picks1.png"
+                        width={240}
+                        height={174}
+                        alt="picks1"
+      
+                      />
+                    </div>
+                    <div className='w-[199px] h-[96px]'>
+                      <p className="text-[14px] lg:text-[16px] font-light mt-2 text-center">
+                        Trenton modular sofa_3
+                      </p>
+                      <p className="text-[18px] lg:text-[24px] font-normal text-center">
+                        Rs. 25,000.00
+                      </p>
+                    </div>
+                  </li>
+                  <li className="w-[287px] h-[300px] md:h-[350px] flex flex-col items-center hover:bg-mylightblack">
+                    <div className='w-[287px] h-[200px] md:h-[287px] flex justify-center items-center '>
+                      <Image
+                        src="/assets/picks2.png"
+                        width={240}
+                        height={174}
+                        alt="picks1"
+      
+                      />
+                    </div>
+                    <div className='w-[199px] h-[96px]'>
+                      <p className="text-[14px] lg:text-[16px] font-light mt-2 text-center">
+                        Trenton modular sofa_3
+                      </p>
+                      <p className="text-[18px] lg:text-[24px] font-normal text-center">
+                        Rs. 25,000.00
+                      </p>
+                    </div>
+                  </li>
+                  <li className="w-[287px] h-[300px] md:h-[350px] flex flex-col items-center hover:bg-mylightblack">
+                    <div className='w-[287px] h-[200px] md:h-[287px] flex justify-center items-center '>
+                      <Image
+                        src="/assets/picks3.png"
+                        width={240}
+                        height={174}
+                        alt="picks1"
+      
+                      />
+                    </div>
+                    <div className='w-[199px] h-[96px]'>
+                      <p className="text-[14px] lg:text-[16px] font-light mt-2 text-center">
+                        Trenton modular sofa_3
+                      </p>
+                      <p className="text-[18px] lg:text-[24px] font-normal text-center">
+                        Rs. 25,000.00
+                      </p>
+                    </div>
+                  </li>
+                  <li className="w-[287px] h-[300px] md:h-[350px] flex flex-col items-center hover:bg-mylightblack">
+                    <div className='w-[287px] h-[200px] md:h-[287px] flex justify-center items-center '>
+                      <Image
+                        src="/assets/picks4.png"
+                        width={240}
+                        height={174}
+                        alt="picks1"
+      
+                      />
+                    </div>
+                    <div className='w-[199px] h-[96px]'>
+                      <p className="text-[14px] lg:text-[16px] font-light mt-2 text-center">
+                        Trenton modular sofa_3
+                      </p>
+                      <p className="text-[18px] lg:text-[24px] font-normal text-center">
+                        Rs. 25,000.00
+                      </p>
+                    </div>
+                  </li>
+                </ul>
       <Link
         href={'#'}
-        className="mt-8 text-[18px] lg:text-[24px] border-b-2 border-black hover:border-mytextcolor hover:text-mytextcolor"
+        className="mt-8 text-[18px] lg:text-[24px] border-b-2 border-black hover:border-myorange hover:text-myorange"
       >
         View More
       </Link>
