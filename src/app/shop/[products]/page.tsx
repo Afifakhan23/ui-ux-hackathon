@@ -1,17 +1,17 @@
 'use client'
-import React, { useState } from "react";
-import Image from 'next/image'
-import { IoIosStar } from "react-icons/io";
-import { IoIosStarHalf } from "react-icons/io";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { useParams } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from "react";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import Link from 'next/link'
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { IoIosStar, IoIosStarHalf } from "react-icons/io";
 
-import { products } from '@/app/shop/page'
 import Navbar from "@/app/components/navbar";
+import {productDetail } from '../page';
 
-const ProductPage = ({ params }: { params: { products: string } }) => {
+const ProductPage = () => {
+  const params = useParams();
   const productName = params.products; // `products` matches the [products] folder
   const [selectedSize, setSelectedSize] = useState("L");
   const [count, setCount] = useState(0); // Initialize state to hold the count value
@@ -27,8 +27,9 @@ const ProductPage = ({ params }: { params: { products: string } }) => {
   const handleSizeChange = (size: string) => {
     setSelectedSize(size);
   };
-  const product = products.find(
-    (prod) => prod.title.replace(/\s+/g, "-").toLowerCase() === productName
+  const product = productDetail.find(
+    (prod) =>
+      prod.title.replace(/\s+/g, "-").toLowerCase() === productName
   );
 
   if (!product) {

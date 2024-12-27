@@ -6,8 +6,10 @@ import { BsViewList } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
 import Navbar from '../components/navbar';
 
-
-export const products = [
+type IProduct = {
+  [key: string]: string // You can change this to a number if needed
+};
+export const productDetail:IProduct[] = [
   { href: '/shop/trenton-modular-sofa_3', src: '/assets/picks1.png', alt: 'picks1', title: 'Trenton modular sofa_3', price: '25,000.00' },
   { href: '/shop/granite-dining-table-with-dining-chair', src: '/assets/picks2.png', alt: 'picks2', title: 'Granite dining table with dining chair', price: '30,000.00' },
   { href: '/shop/outdoor-bar-table-and-stool', src: '/assets/picks3.png', alt: 'picks3', title: 'Outdoor bar table and stool', price: '20,000.00' },
@@ -25,8 +27,6 @@ export const products = [
   { href: '/shop/maya-sofa-three-seater', src: '/assets/table9.png', alt: 'picks15', title: 'Maya sofa three seater', price: '115,000.00' },
   { href: '/shop/outdoor-sofa-set', src: '/assets/table10.png', alt: 'picks16', title: 'Outdoor sofa set', price: '244,000.00' },
 
-  
-  // Add more products as needed
 ];
 const Page = () => {
 
@@ -65,7 +65,7 @@ const Page = () => {
       <div className='h-auto flex justify-center items-center'>
         <div className='h-auto md:w-[1242px] flex flex-col justify-between items-center'>
         <ul className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {products.map((product, index) => (
+            {productDetail.map((product, index) => (
               <Link href={product.href} key={index}>
               <li className="w-[287px] h-[300px] md:h-[350px] flex flex-col justify-between items-center hover:bg-mylightblack">
               <div className='w-[287px] h-[200px] flex justify-center items-center '>
