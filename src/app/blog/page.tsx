@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
+import About from '../components/about'
 
 const Page = () => {
     return (
@@ -142,26 +143,7 @@ const Page = () => {
             </div>
             </div>
             </div>
-            <div className="flex justify-evenly items-center bg-mylightpink w-full h-[300px] text-center mt-5">
-                <div className='w-[90px] md:w-[376px] h-[108px] '>
-                    <h3 className="text-lg font-medium">Free Delivery</h3>
-                    <p className="text-sm text-gray-600">
-                        For all orders over $50, consectetur adipiscing elit.
-                    </p>
-                </div>
-                <div className='w-[90px] md:w-[376px] h-[108px] '>
-                    <h3 className="text-lg font-medium">90 Days Return</h3>
-                    <p className="text-sm text-gray-600">
-                        If goods have problems, consectetur adipiscing elit.
-                    </p>
-                </div>
-                <div className='w-[90px] md:w-[376px] h-[108px] '>
-                    <h3 className="text-lg font-medium">Secure Payment</h3>
-                    <p className="text-sm text-gray-600">
-                        100% secure payment, consectetur adipiscing elit.
-                    </p>
-                </div>
-            </div>
+            <About/>
         </div>
     )
 }

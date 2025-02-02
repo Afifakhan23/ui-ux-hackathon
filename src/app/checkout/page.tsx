@@ -1,9 +1,16 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../components/navbar'
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store'
 
 const Page = () => {
+    const cart = useSelector((state: RootState) => state.cart.items);
+    const getTotalPrice = () => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    };
   return (
     <div>
         <Navbar/>
@@ -68,24 +75,31 @@ const Page = () => {
                     </label>
                     <input type="text" name="Phone" id="Phone" placeholder='Additional information' className='w-[300px] md:w-[453px] h-14 md:h-[75px] border-2 border-mytextcolor rounded-[10px]' />
                 </div>
-                <div className='w-[320px] md:w-[608px] h-auto md:h-[789px] flex justify-center items-center mt-5 md:mt-32'>
+                <div className='w-[320px] md:w-[608px] h-auto flex justify-center items-center mt-5 md:mt-32'>
                     <ul className='w-[320px] md:w-[533px] h-auto md:h-[616px] flex flex-col justify-evenly items-center md:items-start'>
                         <li className='w-[300px] md:w-[533px] flex justify-between items-center'>
                             <h2 className='text-[24px] font-medium'>Product</h2>
                             <h2 className='text-[24px] font-medium'>Subtotal</h2>
                         </li>
-                        <li className='w-[300px] md:w-[533px] flex justify-between items-center'>
-                            <p className='text-mytextcolor font-normal'>Asgaard sofa <span className='text-black font-medium text-[12px]'>X 1</span>
-                            </p>
-                            <p>Rs. 250,000.00</p>
-                        </li>
-                        <li className='w-[300px] md:w-[533px] flex justify-between items-center'>
-                            <p className='font-normal'>Subtotal</p>
-                            <p>Rs. 250,000.00</p>
+                        {cart.length > 0 ? (
+                                cart.map((item, index) => (
+                                    <li key={index} className='w-[300px] md:w-[533px] flex justify-between items-center'>
+                                        <p className='text-mytextcolor font-normal'>{item.name} <span className='text-black font-medium text-[12px]'>X {item.quantity}</span></p>
+                                        <p>$ {item.price * item.quantity}</p>
+                                    </li>
+                                ))
+                            ) : (
+                                <li className='w-[300px] md:w-[533px] text-center'>
+                                    <p>Your cart is empty</p>
+                                </li>
+                            )}
+                        <li className='w-[300px] md:w-[533px] flex justify-between items-center font-semibold text-lg'>
+                            <p>Subtotal</p>
+                            <p>$ {getTotalPrice()}</p>
                         </li>
                         <li className='w-[300px] md:w-[533px] flex justify-between items-center pb-10 border-b-2 border-mylightblack'>
-                            <p>Total</p>
-                            <p className='font-bold text-[24px] text-[#B88E2F]'>Rs. 250,000.00</p>
+                            <p className='font-semibold'>Total</p>
+                            <p className='font-bold text-[24px] text-[#B88E2F]'>$ {getTotalPrice()}</p>
                         </li>
                         <li className='py-10'>
                             <label htmlFor="">

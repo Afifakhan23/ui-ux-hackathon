@@ -1,8 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    typescript: {
-        ignoreBuildErrors: true,
-     },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "next-ecommerce-template-4.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io", // ✅ Add Sanity's image CDN
+      },
+    ],
+  },
 };
 
 export default nextConfig;
