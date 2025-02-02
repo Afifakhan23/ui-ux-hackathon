@@ -9,10 +9,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 export const productDetail = [
-  {id:'1', href: '/products/armchair-coffee-table', src: '/assets/armchair-coffee-table.png', title: 'Armchair Coffee Table', price: 2100,category:"Chair",description:'The Armchair Coffee Table is a stylish and functional addition to any living space. Designed to complement armchairs and sofas, this table offers a perfect balance of elegance and practicality.' },
-  { id:'2',href: '/products/blue-sofa-set', src: '/assets/blue-sofa-set.png',title: 'Blue Sofa Set', price: 2500,category:"Sofa",description:'The Blue Sofa Set brings elegance and comfort to your living space with its sophisticated design and plush seating.' },
-  { id:'3',href: '/products/modern-sideboard', src: '/assets/modern-sideboard.png',title: 'Modern Sideboard', price: 1500 ,category:"Sideboard",description:'The Modern Sideboard is a perfect blend of style and functionality, designed to elevate your living or dining space.'},
-  { id:'4',href: '/products/elegant-armchair', src: '/assets/elegant-armchair.png', title: 'Elegant Armchair', price: 1800 ,category:"Chair",description:'The Elegant Armchair is a perfect combination of comfort and sophistication, designed to enhance any living space with its timeless appeal.'},
+  {id:'1', href: '/picks/item/armchair-coffee-table', src: '/assets/armchair-coffee-table.png', title: 'Armchair Coffee Table', price: 2100,category:"Chair",description:'The Armchair Coffee Table is a stylish and functional addition to any living space. Designed to complement armchairs and sofas, this table offers a perfect balance of elegance and practicality.' },
+  { id:'2',href: '/picks/item/blue-sofa-set', src: '/assets/blue-sofa-set.png',title: 'Blue Sofa Set', price: 2500,category:"Sofa",description:'The Blue Sofa Set brings elegance and comfort to your living space with its sophisticated design and plush seating.' },
+  { id:'3',href: '/picks/item/modern-sideboard', src: '/assets/modern-sideboard.png',title: 'Modern Sideboard', price: 1500 ,category:"Sideboard",description:'The Modern Sideboard is a perfect blend of style and functionality, designed to elevate your living or dining space.'},
+  { id:'4',href: '/picks/item/elegant-armchair', src: '/assets/elegant-armchair.png', title: 'Elegant Armchair', price: 1800 ,category:"Chair",description:'The Elegant Armchair is a perfect combination of comfort and sophistication, designed to enhance any living space with its timeless appeal.'},
 ];
 const Picks = () => {
   const settings = {

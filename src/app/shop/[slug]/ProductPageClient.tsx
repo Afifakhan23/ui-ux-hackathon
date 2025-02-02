@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { addToCart } from "@/app/redux/cartSlices";
 import { urlFor } from "@/sanity/lib/client";
+import swal from 'sweetalert2'
 
 // Define the product type
 export interface Product {
@@ -37,13 +38,13 @@ const ProductPageClient: React.FC<ProductPageClientProps> = ({ product }) => {
       size: selectedSize,
     }));
 
-    // Show the popup when item is added to cart
-    setPopupVisible(true);
-
-    // Hide the popup after 3 seconds
-    setTimeout(() => {
-      setPopupVisible(false);
-    }, 3000);
+  swal.fire({
+      position:'center',
+      icon:'success',
+      title:`${product.name} added to cart`,
+      showConfirmButton:false,
+      timer:1000,
+    })
   };
 
   return (
@@ -80,13 +81,6 @@ const ProductPageClient: React.FC<ProductPageClientProps> = ({ product }) => {
           Add To Cart
         </button>
       </div>
-
-      {/* Popup Message */}
-      {popupVisible && (
-        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white p-4 rounded-md">
-          Item added to cart successfully!
-        </div>
-      )}
     </>
   );
 };
