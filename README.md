@@ -1,47 +1,36 @@
-🛒 Next.js E-Commerce Website
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-📌 Project Overview
+## Getting Started
 
-This project is a fully functional e-commerce website built with Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS. It includes core e-commerce functionalities such as product listing, search, filtering, pagination, and add-to-cart features using Redux Toolkit.
+First, run the development server:
 
-🚀 Features
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-🛍️ Product Listing
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Displays products fetched from Sanity CMS.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Supports dynamic product pages.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-🔍 Search & Filtering
+## Learn More
 
-Users can search for products by name.
+To learn more about Next.js, take a look at the following resources:
 
-Price-based filtering option available.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-📄 Pagination
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Dynamic pagination with customizable items per page.
+## Deploy on Vercel
 
-Smooth page transitions and navigation.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-🛒 Add to Cart
-
-Uses Redux Toolkit for efficient state management.
-
-Users can add, remove, and update items in the cart.
-
-📱 Responsive Design
-
-Fully responsive layout for mobile, tablet, and desktop.
-
-🛠️ Tech Stack
-
-Next.js 14 – For server-side rendering & client-side routing.
-
-TypeScript – Ensures type safety and better development experience.
-
-Tailwind CSS – For modern styling and responsive design.
-
-Sanity CMS – Headless CMS for managing product data.
-
-Redux Toolkit – State management for cart functionality.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
