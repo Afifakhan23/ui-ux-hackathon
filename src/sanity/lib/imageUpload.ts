@@ -1,5 +1,3 @@
-
-
 export async function uploadImage(file: File) {
   const formData = new FormData();
   formData.append("file", file);
@@ -10,7 +8,8 @@ export async function uploadImage(file: File) {
     {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.SANITY_API_TOKEN}`,
+        Authorization: `Bearer ${process.env.SANITY_AUTH_TOKEN}`,
+        "Content-Type": "multipart/form-data",
       },
       body: formData,
     }
