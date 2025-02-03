@@ -2,9 +2,9 @@ import "dotenv/config";
 import { createClient } from "@sanity/client";
 import fetch from "node-fetch";
 import slugify from "slugify";
-const {NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,NEXT_PUBLIC_SANITY_AUTH_TOKEN,BASE_URL} = process.env;
+const {NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,SANITY_AUTH_TOKEN,BASE_URL} = process.env;
 // Validate required environment variables
-if (!NEXT_PUBLIC_SANITY_PROJECT_ID || !NEXT_PUBLIC_SANITY_AUTH_TOKEN) {
+if (!NEXT_PUBLIC_SANITY_PROJECT_ID || !SANITY_AUTH_TOKEN) {
   console.error("Missing required environment variables. Please check your .env.local file.");
   process.exit(1);
 }
@@ -14,7 +14,7 @@ const targetClient = createClient({
   dataset: NEXT_PUBLIC_SANITY_DATASET || "production",
   useCdn: false,
   apiVersion: "2023-01-01",
-  token: NEXT_PUBLIC_SANITY_AUTH_TOKEN,
+  token: SANITY_AUTH_TOKEN,
 });
 // Upload image to Sanity
 async function uploadImageToSanity(imageUrl) {
