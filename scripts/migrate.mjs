@@ -2,7 +2,11 @@ import "dotenv/config";
 import { createClient } from "@sanity/client";
 import fetch from "node-fetch";
 import slugify from "slugify";
-const {NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,SANITY_AUTH_TOKEN,BASE_URL} = process.env;
+const {NEXT_PUBLIC_SANITY_PROJECT_ID,
+  NEXT_PUBLIC_SANITY_DATASET,
+  SANITY_AUTH_TOKEN,
+  BASE_URL}
+   = process.env;
 // Validate required environment variables
 if (!NEXT_PUBLIC_SANITY_PROJECT_ID || !SANITY_AUTH_TOKEN) {
   console.error("Missing required environment variables. Please check your .env.local file.");
@@ -44,7 +48,7 @@ async function migrateData() {
   console.log("Starting data migration...");
   try {
     // Fetch product data from external API
-    const productsResponse = await fetch(`${BASE_URL}/api/product`);
+    const productsResponse = await fetch(`${BASE_URL}`);
     if (!productsResponse.ok) throw new Error("Failed to fetch products.");
     const productsData = await productsResponse.json();
 
