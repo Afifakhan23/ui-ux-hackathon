@@ -57,23 +57,26 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const query = `*[_type == "product"]`;
-        const data: Product[] = await sanityClient.fetch(query);
+        console.log("Fetching products from Sanity...");
+        const query = `*[_type == "product"]{_id, name, price, slug, imagePath}`;
+        const data = await sanityClient.fetch(query);
+  
+        if (!data || data.length === 0) {
+          console.warn("No products found!");
+        }
+  
         setProducts(data);
-        setFilteredProducts(data); // Initially set filteredProducts to all products
+        setFilteredProducts(data); // Show all products initially
+        setIsMounted(true);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
+  
     fetchProducts();
-    // Set component mounted state to true after fetching products
-    setIsMounted(true);
   }, []);
-
-  // Prevent rendering dynamic content (filteredProducts) until after the component is mounted
-  if (!isMounted) {
-    return null; // Optionally return a loading indicator here instead of null
-  }
+  if (!isMounted) return null;
+  if (!filteredProducts.length) return <p>Loading products...</p>;
   // Pagination Logic
   const startIndex = productsPerPage.slice(0, currentPage - 1).reduce((a, b) => a + b, 0);
   const endIndex = startIndex + productsPerPage[currentPage - 1];
