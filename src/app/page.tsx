@@ -30,6 +30,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './redux/store';
 import { removeFromCart } from './redux/cartSlices';
 import { PiShoppingCartFill } from 'react-icons/pi';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -58,7 +59,17 @@ export default function Home() {
 
       {/* Desktop Icons */}
       <ul className="hidden lg:flex h-[28px] space-x-6 mr-0 lg:mr-20">
-        <li><Link href='/account'><FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' /></Link></li>
+        {/* If User is Signed Out, show FaUserCircle */}
+        <SignedOut>
+          <Link href={"/account"}>
+            <FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' />
+          </Link>
+        </SignedOut>
+
+        {/* If User is Signed In, show Clerk's UserButton */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <li><LuSearch className='w-[28px] h-[28px] hover:text-mytextcolor' /></li>
         <li><GoHeart className='w-[28px] h-[28px] hover:text-[#ff3f34]' /></li>
         <div className="relative">
@@ -151,7 +162,17 @@ export default function Home() {
             <li><Link href={'/contact'} className='hover:text-[#FF5733] p-2 border-transparent border-b-2 hover:border-[#fa8231]'>Contact</Link></li>
           </ul>
           <ul className="flex space-x-6">
-            <li><Link href={'/account'}><FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' /></Link></li>
+            {/* If User is Signed Out, show FaUserCircle */}
+        <SignedOut>
+          <Link href={"/account"}>
+            <FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' />
+          </Link>
+        </SignedOut>
+
+        {/* If User is Signed In, show Clerk's UserButton */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
             <li><LuSearch className='w-[28px] h-[28px] hover:text-mytextcolor' /></li>
             <li><GoHeart className='w-[28px] h-[28px] hover:text-[#ff3f34]' /></li>
             <div className="relative">

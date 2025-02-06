@@ -15,6 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { removeFromCart } from '../redux/cartSlices';
 import Logo from '@/../public/assets/logo.png'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -39,8 +40,8 @@ const Navbar = () => {
 
   return (
     <div className={`h-[60px] w-full ${poppins.className} bg-white flex justify-between items-center z-[999]`}>
-          <Link href={'/'}>
-          <Image src={Logo} alt='logo' width={60} height={60} className='ml-0 lg:ml-20'/></Link>
+      <Link href={'/'}>
+        <Image src={Logo} alt='logo' width={60} height={60} className='ml-0 lg:ml-20' /></Link>
       {/* Desktop Navigation */}
       <ul className="hidden lg:flex w-[430px] h-[24px] font-medium text-[16px] space-x-8 ">
         <li><Link href={'/'} className='hover:text-[#FF5733] p-1 border-transparent border-b-2 hover:border-[#fa8231]'>Home</Link></li>
@@ -51,7 +52,17 @@ const Navbar = () => {
 
       {/* Desktop Icons */}
       <ul className="hidden lg:flex h-[28px] space-x-6 mr-0 lg:mr-20">
-        <li><Link href='/account'><FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' /></Link></li>
+        {/* If User is Signed Out, show FaUserCircle */}
+        <SignedOut>
+          <Link href={"/account"}>
+            <FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' />
+          </Link>
+        </SignedOut>
+
+        {/* If User is Signed In, show Clerk's UserButton */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <li><Link href={'/shop'}><LuSearch className='w-[28px] h-[28px] hover:text-mytextcolor' /></Link></li>
         <li><GoHeart className='w-[28px] h-[28px] hover:text-[#ff3f34]' /></li>
         <div className="relative">
@@ -88,7 +99,7 @@ const Navbar = () => {
                     {cart.map((items) => (
                       <div key={items.id + items.size} className="flex items-center space-x-4 p-4">
                         <div className="w-[40px] h-[40px] bg-yellow-100 flex items-center justify-center rounded-md">
-                          <Image src={items.image} alt={items.name} width={1000} height={1000} className="w-[40px] h-[40px] rounded-md"/>
+                          <Image src={items.image} alt={items.name} width={1000} height={1000} className="w-[40px] h-[40px] rounded-md" />
                         </div>
                         <div className="flex-1">
                           <p className="text-black font-semibold text-[11px] md:text-[16px]">{items.name}- {items.size}</p>
@@ -143,7 +154,17 @@ const Navbar = () => {
             <li><Link href={'/contact'} className='hover:text-[#FF5733] p-2 border-transparent border-b-2 hover:border-[#fa8231]'>Contact</Link></li>
           </ul>
           <ul className="flex space-x-6">
-            <li><Link href={'/account'}><FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' /></Link></li>
+            {/* If User is Signed Out, show FaUserCircle */}
+        <SignedOut>
+          <Link href={"/account"}>
+            <FaUserCircle className='w-[28px] h-[28px] hover:text-[#3867d6]' />
+          </Link>
+        </SignedOut>
+
+        {/* If User is Signed In, show Clerk's UserButton */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
             <li><LuSearch className='w-[28px] h-[28px] hover:text-mytextcolor' /></li>
             <li><GoHeart className='w-[28px] h-[28px] hover:text-[#ff3f34]' /></li>
             <div className="relative">
@@ -151,13 +172,13 @@ const Navbar = () => {
               <PiShoppingCartFill className='w-[28px] h-[28px] hover:text-[#3867d6]' onClick={toggleCart} />
               <div className='bg-red-600 w-[18px] h-[18px] text-[10px] text-white flex justify-center items-center rounded-full absolute -top-3 -right-2'>{cart.length}</div>
 
-            {/* Overlay */}
-          {isOpen && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-60 transition-opacity z-40"
-              onClick={toggleCart}
-            />
-          )}
+              {/* Overlay */}
+              {isOpen && (
+                <div
+                  className="fixed inset-0 bg-black bg-opacity-60 transition-opacity z-40"
+                  onClick={toggleCart}
+                />
+              )}
               {/* Shopping Cart Sidebar */}
               <div
                 className={`fixed top-0 right-0 z-[999] h-full w-80 flex flex-col justify-between bg-white shadow-lg transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
@@ -179,7 +200,7 @@ const Navbar = () => {
                         {cart.map((items) => (
                           <div key={items.id + items.size} className="flex items-center space-x-4 p-4">
                             <div className="w-[60px] h-[60px] bg-yellow-100 flex items-center justify-center rounded-md">
-                              <Image src={items.image} alt={items.name} width={100} height={100} className="w-[60px] h-[60px] rounded-md"/>
+                              <Image src={items.image} alt={items.name} width={100} height={100} className="w-[60px] h-[60px] rounded-md" />
                             </div>
                             <div className="flex-1">
                               <p className="text-black font-semibold text-[11px] md:text-[16px]">{items.name}- {items.size}</p>

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { AiFillDelete } from "react-icons/ai";
 import Link from "next/link";
 import { toast, Toaster } from "react-hot-toast";
+import AuthGuard from "../components/authGuard";
 
 const CartPage = () => {
   const cart = useSelector((state: RootState) => state.cart.items);
@@ -31,6 +32,7 @@ const CartPage = () => {
 
   return (
     <>
+    <AuthGuard>
       {/* Toaster for displaying toast notifications */}
       <Toaster position="top-right" reverseOrder={false} />
 
@@ -107,6 +109,7 @@ const CartPage = () => {
           </div>
         </div>
       </div>
+      </AuthGuard>
     </>
   );
 };

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Footer from "./components/footer";
 import Providers from "@/app/redux/provider"; // Corrected import
+import {ClerkProvider} from '@clerk/nextjs'
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={poppins.className}>
         <Providers> {/* Wrap Redux Provider correctly */}
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   );
 }
 
