@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
+import AuthGuard from '../components/authGuard'
 
 const Page = () => {
     const cart = useSelector((state: RootState) => state.cart.items);
@@ -13,6 +14,7 @@ const Page = () => {
     };
   return (
     <div>
+        <AuthGuard>
         <Navbar/>
         <div className="bg-contact bg-center bg-cover bg-no-repeat min-h-[350px] sm:min-h-[316px] w-full flex flex-col justify-center items-center">
                 <Image src={'/assets/logo.png'} alt='logo' width={77} height={77} />
@@ -150,6 +152,7 @@ const Page = () => {
                     </p>
                 </div>
             </div>
+            </AuthGuard>
     </div>
   )
 }
